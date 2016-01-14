@@ -1,0 +1,37 @@
+<body>
+  {{> _configureLoginServiceDialog}}
+  {{> _configureLoginOnDesktopDialog}}
+</body>
+
+<template name="accountsUIModal">
+  <div id="accountsUIModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          {{> Template.dynamic template=activeTemplate}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<template name="accountsUILoading">
+  {{> loading}}
+</template>
+
+<template name="accountsUIHeader">
+  <header>
+    <h3>{{title}}</h3>
+    <a class="close" data-dismiss="modal">&times;</a>
+  </header>
+</template>
+
+<template name="accountsUIFormField">
+  {{#if visible}}
+    <section class="form-group">
+      <input id="login-{{fieldName}}" class="form-control"
+             type="{{inputType}}" placeholder="{{fieldLabel}}" />
+    </section>
+  {{/if}}
+</template>

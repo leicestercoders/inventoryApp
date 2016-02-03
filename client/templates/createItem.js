@@ -1,6 +1,6 @@
 Template.createItem.events({
-	'click #createItem': function(e, t){
-		e.preventDefault();		
+    'click #createItem': function(e, t){
+        e.preventDefault();
         var name = t.find("[id='Name']").value;
         var assetCode = t.find("[id='AssetCode']").value;
         console.log("Creating item ...")

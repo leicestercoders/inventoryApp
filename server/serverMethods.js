@@ -1,10 +1,12 @@
 // server/serverMethods.js
 Meteor.methods({
-    "createItemServerSide": function(){
-        
-    //TODO: Insert an item into mongodb  using below sample code
-    Item.insert({Name: "Hello  world!", AssetCode: "1234567"});
-    
-    return "Creating an item on the server side method.";
+    "createItemServerSide": function(name, assetCode) {
+        Item.insert({Name: name, AssetCode: assetCode}, function(error, result) {
+            if (error) {
+                throw error;
+            }
+            console.log("Item created. " + (result || ""));
+        });
+        return "Creating an item on the server side method.";
     },
 })

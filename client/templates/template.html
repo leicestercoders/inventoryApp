@@ -16,8 +16,21 @@
   {{> createItem}}
 </template>
 
+<template name="bookList">
+  <h1>Book List</h1>
+  {{#each bookList}}
+    {{Title}}: {{Author}} -- {{ISBN}}<br/>
+  {{/each}}
+  
+  {{> createBook}}
+</template>
+
 <template name="updateItem">
   <h1>Update Item</h1>
+</template>
+
+<template name="updateBook">
+  <h1>Update Book</h1>
 </template>
 
 <template name="home">
@@ -33,6 +46,21 @@
     <label>Name:</label>
     <input type="text" id="Name" name="Name">
     <button id="createItem">Create Item</button>
+  </form>
+  
+</template>
+
+<template name="createBook">
+  <h1>Create a new book</h1>
+
+  <form id="formCreateBook">
+    <label>Title:</label>
+    <input type="text" id="Title" name="Title">
+    <label>Author:</label>
+    <input type="text" id="Author" name="Author">
+    <label>ISBN:</label>
+    <input type="text" id="ISBN" name="ISBN">
+    <button id="createBook">Create Book</button>
   </form>
   
 </template>

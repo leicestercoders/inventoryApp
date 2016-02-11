@@ -35,7 +35,10 @@ FlowRouter.route('/updateBook', {
 
 // top-level route
 FlowRouter.route('/', {
-    action: function(params) {
+     subscriptions: function(params,queryParams){
+        this.register('itemsSubs', Meteor.subscribe('itemsPub'));
+     },
+     action: function(params) {
 	BlazeLayout.render("defaultLayout", {top: "defaultHeader", main: "itemsList"});
     }
 });

@@ -3,8 +3,17 @@
   {{> Template.dynamic template=main}}
 </template>
 
+<template name="signInAtForm">
+  {{> atForm}}
+</template>
+
 <template name="defaultHeader">
   <h1>Header</h1>
+  {{#if checkLogin}}
+    <button id="logout">Logout</button>
+  {{else}}
+    <button id="login">Login</button>
+  {{/if}}
 </template>
 
 <template name="itemsList">

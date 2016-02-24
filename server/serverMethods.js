@@ -4,6 +4,9 @@ Meteor.methods({
 
 	// Log formData to Javascript console
 	console.log(formData);
+    if (!Meteor.userId()) {
+        throw new Meteor.Error("Not Authorised", "Please Login First");
+    }
 	// Insert an item into mongodb
 	Item.insert(formData);
 	

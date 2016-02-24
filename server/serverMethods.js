@@ -2,24 +2,24 @@
 Meteor.methods({
     'createItemServerSide': function(formData){
 
-	// Log formData to Javascript console
-	console.log(formData);
-    if (!Meteor.userId()) {
-        throw new Meteor.Error("Not Authorised", "Please Login First");
-    }
-	// Insert an item into mongodb
-	Item.insert(formData);
-	
-	return "Creating an item on the server side method.";
+        // Log formData to Javascript console
+        console.log(formData);
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("Not Authorised", "Please Login First");
+        }
+        // Insert an item into mongodb
+        Item.insert(formData);
+
+        return "Creating an item on the server side method.";
     },
     'createBookServerSide': function(formData){
 
-	// Log formData to Javascript console
-	console.log(formData);
-	// Insert a book into mongodb
-	Book.insert(formData);
+        // Log formData to Javascript console
+        console.log(formData);
+        // Insert a book into mongodb
+        Book.insert(formData);
 
-	return "Creating a book on the server side method.";
+        return "Creating a book on the server side method.";
     }
 
 });

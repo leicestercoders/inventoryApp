@@ -47,15 +47,19 @@
 </template>
 
 <template name="createItem">
-  <h1>Create a new item</h1>
+  {{#if isInRole 'admin' 'LHS'}}
+    <h1>Create a new item</h1>
 
-  <form id="formCreateItem">
-    <label>Asset Code:</label>
-    <input type="text" id="AssetCode" name="AssetCode">
-    <label>Name:</label>
-    <input type="text" id="Name" name="Name">
-    <button id="createItem">Create Item</button>
-  </form>
+    <form id="formCreateItem">
+      <label>Asset Code:</label>
+      <input type="text" id="AssetCode" name="AssetCode">
+      <label>Name:</label>
+      <input type="text" id="Name" name="Name">
+      <button id="createItem">Create Item</button>
+    </form>
+  {{else}}
+    <p>Login as an LHS admin to add entries</p>
+  {{/if}}
 
 </template>
 
